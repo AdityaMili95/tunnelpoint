@@ -1,0 +1,17 @@
+[Unit]
+Description=TlPort5000
+
+
+[Service]
+Environment=/home/pi/
+Environment=PATH=/home/pi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/bin/bash /home/pi/tunnelpoint/scripts/tl-port-5000.sh
+WorkingDirectory=/home/pi/tunnelpoint/
+Type=forking
+StandardOutput=inherit
+StandardError=inherit
+Restart=on-failure
+User=pi
+
+[Install]
+WantedBy=multi-user.target
